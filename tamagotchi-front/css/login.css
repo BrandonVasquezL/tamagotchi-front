@@ -1,0 +1,331 @@
+@font-face {
+    font-family: SuperMario;
+    src: url('../fonts/SuperMarioMaker.ttf');
+}
+@font-face {
+    font-family: SuperMarioExtended;
+    src: url('../fonts/SuperMarioMakerExtended.ttf');
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-size: 14px;
+    font-family: SuperMario;
+}
+.hero{
+    width: 100%;
+    height: 100vh;
+    max-width: 1600px;
+    background-image: url('../assets/backgroundLogin_phone.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero__logo{
+    position: absolute;
+    width: 200px;
+    top: 20px;
+    left: 20px;
+    object-fit: cover;
+    z-index: 100;
+    animation: logo ease-in 2s infinite alternate;
+}
+.hero__logoPikachu{
+    position: absolute;
+    width: 80px;
+    top: 2px;
+    left: 210px;
+    z-index: 100;
+    object-fit: cover;
+}
+.hero__cloudOne{
+    position: absolute;
+    width: 200px;
+    object-fit: cover;
+    top: 220px;
+    right: 0;
+    z-index: 10;
+    animation: cloudOne ease-in 5s infinite alternate;
+}
+.hero__cloudTwo{
+    position: absolute;
+    width: 200px;
+    object-fit: cover;
+    top: 60px;
+    left: 0;
+    z-index: 10;
+    animation: cloudTwo ease-in 5s infinite alternate;
+}
+.hero__form{
+    width: 90%;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+.hero__glass{
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+.hero__pokemonRunning{
+    position: absolute;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    right: 0;
+    bottom: 0;
+    background-image: url('../assets/pokeRunningLeft.gif');
+    background-size: cover;
+    animation: pokemonRunning ease-in 5s infinite normal;
+}
+.form__title{
+    margin-top: 2rem;
+    width: 200px;
+    object-fit: cover;
+    animation: title ease-in 3s infinite alternate;
+}
+.form__container{
+    position: relative;
+    margin-top: 1.2rem;
+}
+.form__container--active{
+    margin-top: 3rem;
+}
+.container__input{
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 1.1rem;
+    border: none;
+    outline: none;
+    background: none;
+    font-family: inherit;
+    border-bottom: 1px solid #e6e3e3;
+}
+.container__label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #e6e3e3;
+    transform: translateY(-50%);
+    font-size: 1.1rem;
+    pointer-events: none;
+    transition: top .5s;
+}
+.container__span::before{
+    content: '';
+    position: absolute;
+    top: 39px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #000;
+    transition: width .5s;
+}
+.container__input:focus ~ .container__label,
+.container__input:valid ~ .container__label{
+    top: -5px;
+    color: #000;
+}
+.container__input:focus ~ .container__span::before,
+.container__input:valid ~ .container__span::before{
+    width: 100%;
+}
+.form__button{
+    margin-top: 2rem;
+    padding: .7rem 2.6rem;
+    font-family: inherit;
+    border: none;
+    font-size: 1.1rem;
+    border-radius: 3px;
+    transition-property: background-color;
+    transition-duration: .5s;
+    z-index: 100;
+    cursor: pointer;
+}
+.form__button:hover{
+    background-color: #000;
+    color: #e6e3e3;
+}
+.form__signUp{
+    z-index: 100;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    text-decoration: none;
+    color: #000;
+    font-size: 1.1rem;
+    padding: .5rem 2.4rem;
+    border-radius: 3px;
+    border: 1px solid #000;
+    transition: border .3s;
+    cursor: pointer;
+}
+.form__signUp:hover{
+    color: #e6e3e3;
+    border: 1px solid;
+}
+.hero__copy{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: .9rem;
+    line-height: 20px;
+}
+.hero__ctaBack{
+    position: fixed;
+    display: inline-block;
+    bottom: 20px;
+    left: 10px;
+    color: #e6e3e3;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: .5rem 2rem;
+    transition: transform .3s;
+}
+.cta__icon{
+    margin-right: .3rem;
+    object-fit: cover;
+}
+.hero__ctaBack:hover{
+    transform: translateX(-10px);
+}
+/* 
+    ### MEDIA QUERY
+*/
+@media screen and (min-width: 555px) {
+    .hero{
+        width: 100%;
+        height: 100vh;
+        max-width: 1600px;
+        background-image: url('../assets/backgroundLoginDesktop.png');
+        background-size: cover;
+        background-position: center;
+    }
+    .hero__cloudOne{
+        top: 150px;
+        right: 0;
+    }
+    .hero__cloudTwo{
+        top: 30px;
+        left: 0;
+    }
+    .hero__copy{
+        bottom: 3px;
+        right: 10px;
+    }
+}
+
+/* 
+    ### DECLARATION OF KEY FRAMES
+*/
+@keyframes cloudOne{
+    0%{
+        transform: translate(0px, 0);
+    }
+    100%{
+        transform: translate(-80px, 0);
+    }
+}
+@keyframes cloudTwo{
+    0%{
+        transform: translate(0px, 0);
+    }
+    100%{
+        transform: translate(100px, 0);
+    }
+}
+@keyframes title{
+    0%{
+        transform: translate(0, 5px);
+    }
+    100%{
+        transform: translate(0, -5px);
+    }
+}
+@keyframes logo{
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.1);
+    }
+}
+@keyframes pokemonRunning{
+    0%{
+        transform: translate(100px, 0);
+    }
+    100%{
+        transform: translate(-400px, 0);
+    }
+}
+/* 
+    ### ALERTS
+*/
+.toast{
+    position: fixed;
+    top: 20px;
+    right: 0;
+    width: 350px;
+    height: 60px;
+    background-color: #FFBABA;
+    border-radius: 3px;
+    border-left: 10px solid #D8000C;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 10%);
+    transform: translateX(calc(100% + 50px));
+    transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.showing{
+    transform: translateX(-100px);
+}
+.upside{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.upside span{
+    font-size: 25px;
+    letter-spacing: 2px;
+    color: #D8000C;
+}
+.squad{
+    width: 35px;
+    height: 35px;
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.squad-error{
+    width: 100%;
+}
+.closed{
+    background-color: #D8000C;
+    height: 100%;
+    padding: 0 .4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 3px 3px 0;
+}
+.close-icon{
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}

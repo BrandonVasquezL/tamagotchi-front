@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/signup.css">
+    <title>Sign Up</title>
+</head>
+<body>
+    <div id="page" class="site">
+        <div class="container">
+            <div class="form-box">
+                <div class="progress">
+                    <div class="logo">
+                        <a href="/">
+                            <span>Tama</span>gotchi
+                        </a>
+                    </div>
+                    <ul class="progress-steps">
+                        <li class="step active">
+                            <span>1</span>
+                            <p>account data<br><span>10 secs to complete</span></p>
+                        </li>
+                        <li class="step">
+                            <span>2</span>
+                            <p>Choose pet<br><span>60 secs to complete</span></p>
+                        </li>
+                        <li class="step">
+                            <span>3</span>
+                            <p>Confirm<br><span>10 secs to complete</span></p>
+                        </li>
+                    </ul>
+                </div>
+                <form action="">
+                    <div class="form-one form-step active">
+                        <h2>Account Data</h2>
+                        <p>Enter your personal information correctly</p>
+                        <div>
+                            <label>Name user</label>
+                            <input type="text" id="nameUser" required>
+                        </div>
+                        <div>
+                            <label>Passsword</label>
+                            <input type="password" id="password" required>
+                        </div>
+                    </div>
+                    <div class="form-two form-step">
+                        <h2>Choose pet</h2>
+                        <div id="view__pokemon">
+                            <div class="pokemon-container">
+                                <img src="../assets/pikachuLogo.gif" alt="Pikachu" class="pokemon-img">
+                                <span>Pikachu</span>
+                            </div>
+                            <div class="pokemon-container">
+                                <img src="../assets/charmander.gif" alt="Charmander" class="pokemon-img">
+                                <span>Charmander</span>
+                            </div>
+                        </div>
+                        <div>
+                            <label>The name of the pet</label>
+                            <input type="text" id="namePet" required>
+                        </div>
+                        <div>
+                            <label>Pokemon</label>
+                            <select name="country" id="country">
+                                <option value="Pikachu">Please select</option>
+                                <option value="Pikachu">Pikachu</option>
+                                <option value="Charmander">Charmander</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-three form-step">
+                        <h2>Confirm</h2>
+                        <div>
+                            <label>Name User</label>
+                            <input type="text" disabled id="confirmNameUser">
+                        </div>
+                        <div>
+                            <label>Password</label>
+                            <input type="password" disabled id="confirmPassword">
+                            <img src="../assets/vision.svg" class="visionButton">
+                        </div>
+                        <div>
+                            <label>Name Pet</label>
+                            <input type="text" disabled id="confirmNamePet">
+                        </div>
+                        <div>
+                            <label>Selected Pet</label>
+                            <input type="text" disabled id="confirmSelectedPet">
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" id="confirm">
+                            <label>My information is correct</label>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn-prev" disabled>Back</button>
+                        <button type="button" class="btn-next">Netx Step</button>
+                        <button type="button" class="btn-submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <audio loop id="hero__music">
+            <source src="../assets/backgroundSound.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+    <div class="toast">
+        <div class="upside">
+            <div class="squad">
+                <img src="../assets/error.svg" class="squad-error">
+            </div>
+            <span>empty fields</span>
+            <div class="closed">
+                <img src="../assets/closed.svg" class="close-icon">
+            </div>
+        </div>
+    </div>
+    <div class="toastTwo">
+        <div class="upsideTwo">
+            <div class="squadTwo">
+                <img src="../assets/check.svg" class="squad-errorTwo">
+            </div>
+            <span>saved data</span>
+            <div class="closedTwo">
+                <img src="../assets/closedTwo.svg" class="close-iconTwo">
+            </div>
+        </div>
+    </div>
+    <a href="../html/login.html" class="hero__ctaBack">
+        <img src="../assets/arrow.svg" alt="Arrow" class="cta__icon">
+        Back
+    </a>
+    <script src="../js/signup.js"></script>
+    <script src="../js/backgroundSound.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/login.css">
+    <title>Log In</title>
+</head>
+<body>
+    <!-- 
+        animate__animated animate__backInLeft animate__repeat-1 animate__slow
+        https://gfycat.com/stickers/search/gif%3A+pokemon
+        https://ezgif.com/webp-to-gif/ezgif-1-307b8819d0.webp
+    -->
+    <main class="hero">
+        <img src="../assets/tamagotchi.png" alt="Tamagotchi" class="hero__logo">
+        <img src="../assets/cloud.png" alt="cloud" class="hero__cloudOne">
+        <img src="../assets/cloud.png" alt="cloud" class="hero__cloudTwo">
+        <img src="../assets/pikachuLogo.gif" alt="pikachu" class="hero__logoPikachu">
+        <form action="" class="hero__form hero__glass">
+            <img src="../assets/welcomeBack.png" alt="Welcome Back" class="form__title">
+            <div class="form__container form__container--active">
+                <input type="text" class="container__input" required id="nameUser">
+                <span class="container__span"></span>
+                <label class="container__label">Name User</label>
+            </div>
+            <div class="form__container">
+                <input type="password" class="container__input" required id="password">
+                <span class="container__span"></span>
+                <label class="container__label">Password</label>
+            </div>
+            <button type="button" class="form__button">sign in</button>
+            <a href="signup.html" class="form__signUp">Sign Up</a>
+            <label class="hero__pokemonRunning"></label>
+        </form>
+        <a href="../html/index.html" class="hero__ctaBack">
+            <img src="../assets/arrow.svg" alt="Arrow" class="cta__icon">
+            Back
+        </a>
+        <audio loop id="hero__music">
+            <source src="../assets/backgroundSound.mp3" type="audio/mpeg">
+        </audio>
+        <span class="hero__copy">
+            &copy; Filete López Christian<br>
+            &copy; Rodriguez Solís Eduardo<br>
+            &copy; Arellano Moreno Diego<br>
+            &copy; Vasquez Lozano Brandon<br>
+        </span>
+    </main>
+    <div class="toast">
+        <div class="upside">
+            <div class="squad">
+                <img src="../assets/error.svg" class="squad-error">
+            </div>
+            <span>empty fields</span>
+            <div class="closed">
+                <img src="../assets/closed.svg" class="close-icon">
+            </div>
+        </div>
+    </div>
+    <script src="../js/login.js"></script>
+    <script src="../js/backgroundSound.js"></script>
+</body>
+</html>
