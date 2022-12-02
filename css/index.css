@@ -1,0 +1,203 @@
+@font-face {
+    font-family: SuperMario;
+    src: url('../fonts/SuperMarioMaker.ttf');
+}
+@font-face {
+    font-family: SuperMarioExtended;
+    src: url('../fonts/SuperMarioMakerExtended.ttf');
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-size: 14px;
+    font-family: SuperMario;
+}
+.hero{
+    width: 100%;
+    height: 100vh;
+    max-width: 1600px;
+    background-image: url('../assets/backgroundLogin_phone.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.hero__pokeFlying{
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 130px;
+    object-fit: cover;
+}
+.hero__copy{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: .9rem;
+    line-height: 20px;
+}
+.hero__container{
+    width: 90%;
+    height: 300px;
+    max-width: 375px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    position: relative;
+    border-radius: 5px;
+}
+.hero__glass{
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+/* 
+    EFFECTS TO THE TITLE START
+*/
+.hidden {
+    opacity: 0;
+}
+.console-container {
+    margin-top: 2rem;
+    font-family: SuperMario;
+    font-size: 2.5em;
+    text-align: center;
+    width: 100%;
+    display: block;
+    color: #000;
+}
+.console-underscore {
+    display: inline-block;
+    position: relative;
+    top: -.1rem;
+    left: -10px;
+}
+/* 
+    EFFECTS TO THE TITLE END
+*/
+.hero__pikachuRunning{
+    width: 50px;
+    position: absolute;
+    top: -30px;
+    left: -10px;
+    object-fit: cover;
+}
+.hero__pikaSleep{
+    position: absolute;
+    width: 40px;
+    right: -2px;
+    top: -37px;
+    z-index: 100;
+}
+.hero__cloudOne{
+    position: fixed;
+    width: 200px;
+    object-fit: cover;
+    top: 70px;
+    left: 0;
+    z-index: 10;
+    animation: cloudOne ease-in 5s infinite alternate;
+}
+.hero__cloudTwo{
+    position: absolute;
+    width: 200px;
+    object-fit: cover;
+    top: 150px;
+    right: 0;
+    z-index: 10;
+    animation: cloudTwo ease-in 5s infinite alternate;
+}
+.hero__cta{
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    background-color: #fff;
+    padding: 1rem 3rem;
+    border-radius: 3px;
+    color: #000;
+    font-size: 1.1rem;
+    position: relative;
+    transition-property: background-color;
+    transition-duration: .2s;
+    animation: buttonAnimation ease-in 2s infinite alternate;
+}
+.hero__cta:hover{
+    background-color: transparent;
+}
+.hero__cta::before,
+.hero__cta::after{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #000;
+    transition: .3s all ease-in-out;
+}
+.hero__cta::before{
+    top: 0;
+    left: 0;
+}
+.hero__cta::after{
+    bottom: 0;
+    right: 0;
+}
+.hero__cta:hover::before{
+    right: 0;
+    left: auto;
+    width: 100%;
+    background-color: #000;
+}
+.hero__cta:hover::after{
+    right: auto;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+}
+@media screen and (min-width: 600px){
+    .hero{
+        width: 100%;
+        height: 100vh;
+        background-image: url('../assets/backgroundLoginDesktop.png');
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+/* 
+    ### DECLARATION OF KEY FRAMES
+*/
+@keyframes cloudOne{
+    0%{
+        transform: translate(0px, 0);
+    }
+    100%{
+        transform: translate(80px, 0);
+    }
+}
+@keyframes buttonAnimation{
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.1);
+    }
+}
+@keyframes cloudTwo{
+    0%{
+        transform: translate(0px, 0);
+    }
+    100%{
+        transform: translate(-100px, 0);
+    }
+}
