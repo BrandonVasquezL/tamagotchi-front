@@ -119,10 +119,10 @@ img{
 /* --- DATA PET --- */
 .hero__information{
     width: 400px;
-    height: 80%;
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    position: relative;
 }
 .information-form{
     width: 90%;
@@ -131,11 +131,12 @@ img{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 3rem;
+    gap: 2rem;
 }
 .information-title{
-    font-size: 2rem;
-    margin-top: 2.5rem;
+    font-size: 1rem;
+    text-align: center;
+    margin: 2rem 0 0;
     transition: transform .5s;
     cursor: pointer;
     letter-spacing: 4px;
@@ -157,14 +158,13 @@ img{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: end;
-}
-.data-container-active{
     justify-content: start;
 }
 .data-percentage{
     font-size: 1.5rem;
     margin-left: 1.5rem;
+    text-align: center;
+    width: 70px;
 }
 .data-icon{
     width: 20px;
@@ -181,13 +181,11 @@ img{
     margin-right: 1rem;
     transition: transform .3s;
 }
-.data-bar-active{
-    margin-left: .6rem;
-}
 .data-bar:hover{
     transform: scale(1.1);
 }
 .submit-button{
+    margin: 0 0 2rem;
     border: none;
     background-color: #000;
     color: #fff;
@@ -205,9 +203,20 @@ img{
     color: #000;
 }
 .data-button{
+    position: absolute;
+    right: 15px;
+    font-family: inherit;
+    font-size: .7rem;
     border: none;
-    padding: .5rem 1.8rem;
-    border-radius: 20px;
+    padding: .8rem 1.3rem;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+    transition:  background-color .3s, color .3s;
+    border: 1px solid;
+}
+.data-button:hover{
     background-color: #000;
     color: #fff;
 }

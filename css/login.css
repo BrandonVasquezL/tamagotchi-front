@@ -93,8 +93,8 @@ body{
     animation: pokemonRunning ease-in 5s infinite normal;
 }
 .form__title{
-    margin-top: 2rem;
-    width: 200px;
+    margin-top: 2.3rem;
+    width: 270px;
     object-fit: cover;
     animation: title ease-in 3s infinite alternate;
 }
@@ -168,7 +168,7 @@ body{
     text-decoration: none;
     color: #000;
     font-size: 1.1rem;
-    padding: .5rem 2.4rem;
+    padding: .5rem 1.6rem;
     border-radius: 3px;
     border: 1px solid #000;
     transition: border .3s;
@@ -300,7 +300,7 @@ body{
     justify-content: space-between;
 }
 .upside span{
-    font-size: 25px;
+    font-size: 20px;
     letter-spacing: 2px;
     color: #D8000C;
 }

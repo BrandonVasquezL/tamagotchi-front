@@ -1,6 +1,6 @@
 // ### EFFECTS TO THE TITLE
 
-consoleText(['tamagotchi', 'Press start'], 'text',['#fff','#000']);
+consoleText(['tamagotchi', 'comenzar'], 'text',['#fff','#000']);
 
 function consoleText(words, id, colors) {
     if (colors === undefined) colors = ['#fff'];
