@@ -80,7 +80,6 @@ submitButton.addEventListener('click', ()=>{
             }
         }, 5000);
     }else{
-        console.log('aaaa')
         toastTwo.classList.toggle('showing');
         setTimeout(function(){
             if(toastTwo.classList.toggle('showing')){

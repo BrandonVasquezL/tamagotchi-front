@@ -14,11 +14,19 @@ formButton.addEventListener('click', ()=>{
     password = document.getElementById('password').value;
     nameUser = document.getElementById('nameUser').value;
 
-    password === '' || nameUser === '' ? (
-        toastShow()
-    ) : (
-        location.assign("../html/home.html")
-    );
+    if(password === '' || nameUser === '') {
+        toastShow();
+    }else{
+        axios.post('', {
+            password: password,
+            nameuser: nameUser
+        }).then((respuesta)=>{
+            console.log(respuesta);
+            location.assign("../html/home.html");
+        }).catch((respuesta)=>{
+            console.log(respuesta);
+        })
+    }
 });
 const toastShow = () =>{
     toast.classList.toggle('showing');

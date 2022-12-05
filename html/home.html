@@ -13,16 +13,37 @@
         <img src="../assets/tamagotchi.png" alt="Tamagotchi" class="hero__logo">
         <img src="../assets/pokemonthree.gif" alt="pikachu" class="hero__icon">
         <div class="hero__pet">
-            <img src="../assets/pikachuLogo.gif" alt="pokemon" class="pet-mypet">
+            <img src="../assets/charmander.gif" alt="pokemon" class="pet-mypet">
             <!-- ### AQUÍ VAN LAS ALERTAS DE HAMBRE, SUEÑO, ETC. ### -->
+            <div class="toast toastVida">
+                <div class="upside">
+                    <span>Estoy muriendo</span>
+                </div>
+            </div>
+            <div class="toast toastHambre">
+                <div class="upside">
+                    <span>Tengo hambre</span>
+                </div>
+            </div>
+            <div class="toast toastSucio">
+                <div class="upside">
+                    <span>estoy sucio</span>
+                </div>
+            </div>
+            <div class="toast toastEnergia">
+                <div class="upside">
+                    <span>tengo sueño</span>
+                </div>
+            </div>
+            <!-- ### AQUÍ TERMINAN LAS ALERTAR ### -->
             <span class="pet-owner">
                 dueño: 
-                <span id="">
-                    Christian
+                <span id="owner">
+                    
                 </span>
             </span>
-            <span class="pet-namepet">
-                Melanio
+            <span class="pet-namepet" id="mascota">
+                
             </span>
         </div>
         <div class="hero__information">
@@ -35,11 +56,11 @@
                         Vida
                     </h4>
                     <div class="data-container">
-                        <span class="data-percentage">
-                            50%
+                        <span class="data-percentage" id="vidaPorcentaje">
+                            
                         </span>
                         <img src="../assets/life.png" alt="Life" class="data-icon">
-                        <img src="../assets/50.png" alt="Barra" class="data-bar data-bar-active">
+                        <img src="../assets/100.png" alt="Barra" class="data-bar data-bar-active" id="barVida">
                     </div>
                 </div>
                 <div class="information-data">
@@ -47,11 +68,14 @@
                         energia
                     </h4>
                     <div class="data-container">
-                        <span class="data-percentage">
-                            75%
+                        <span class="data-percentage" id="energiaPorcentaje">
+                            
                         </span>
                         <img src="../assets/energy.png" alt="Life" class="data-icon">
-                        <img src="../assets/75.png" alt="Barra" class="data-bar data-bar-active">
+                        <img src="../assets/100.png" alt="Barra de energia" class="data-bar data-bar-active" id="barEnergia">
+                        <button type="button" class="data-button" id="dormir">
+                            dormir
+                        </button>
                     </div>
                 </div>
                 <div class="information-data">
@@ -59,12 +83,12 @@
                         suciedad
                     </h4>
                     <div class="data-container">
-                        <span class="data-percentage">
-                            100%
+                        <span class="data-percentage" id="suciedadPorcentaje">
+                            
                         </span>
                         <img src="../assets/suciedad.svg" alt="Suciedad" class="data-icon">
-                        <img src="../assets/100.png" alt="Barra de vida" class="data-bar">
-                        <button class="data-button">
+                        <img src="../assets/100.png" alt="Barra de vida" class="data-bar" id="barSuciedad">
+                        <button type="button" class="data-button" id="sucio">
                             bañar
                         </button>
                     </div>
@@ -74,19 +98,35 @@
                         hambre
                     </h4>
                     <div class="data-container">
-                        <span class="data-percentage">
-                            25%
+                        <span class="data-percentage" id="hambrePorcentaje">
+                            
                         </span>
                         <img src="../assets/carne.png" alt="Hambre" class="data-icon data-icon-active">
-                        <img src="../assets/25.png" alt="Barra de vida" class="data-bar">
-                        <button class="data-button">
+                        <img src="../assets/100.png" alt="Barra de vida" class="data-bar" id="barHambre">
+                        <button type="button" class="data-button" id="comer">
                             comer
                         </button>
                     </div>
                 </div>
-                <button type="submit" class="submit-button">guardar</button>
+                <div class="information-buttons">
+                    <button type="button" class="submit-button" id="buttonIniciar">iniciar</button>
+                    <button type="submit" class="submit-button" id="buttonGuardar">guardar</button>
+                </div>
             </form>
         </div>
+        <div class="hero-dialog">
+            <div class="dialog" id="">
+                <h3>
+                    Iniciar juego
+                </h3>
+                <div>
+                    <input type="text" id="user" placeholder="usuario">
+                    <input type="password" id="contra" placeholder="Constraseña">
+                    <input type="button" value="Iniciar" id="iniciarButton">
+                </div>
+            </div>
+        </div>
     </div>
+    <script src="../js/home.js"></script>
 </body>
 </html>
