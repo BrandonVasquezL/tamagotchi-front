@@ -240,7 +240,7 @@ const obtenerDatos = (response)=>{
     mascota.hambre = response.data.hambre;
     mascota.nombre = response.data.nombre;
     mascota.pokemon = response.data.pokemon;
-    mascota.suciedad = resonse.data.suciedad;
+    mascota.suciedad = response.data.suciedad;
     mascota.vida = response.data.vida;
 };
 /// ASIGNAR VALORES A LOS CAMPOS RESPECTIVOS
