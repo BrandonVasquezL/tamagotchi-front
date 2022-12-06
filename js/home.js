@@ -4,17 +4,21 @@ const iniciar = document.getElementById('iniciar');
 const buttonGuardar = document.getElementById('buttonGuardar');
 const iniciarButton = document.getElementById('iniciarButton');
 const heroDialog = document.querySelector('.hero-dialog');
+const petMypet = document.querySelector('.pet-mypet');
 
+/// OBJETO DE LA MASCOTA CON SUS ATRIBUTOS
 let mascota = {
     vida: 100,
-    energia: 75,
-    suciedad: 50,
-    hambre: 25,
-    nombre: 'chanchito feliz',
-    dueno: 'brandon',
-    pokemon: 'pikachu'
+    energia: 100,
+    suciedad: 0,
+    hambre: 0,
+    nombre: '',
+    dueno: '',
+    pokemon: ''
 };
+/// FIN DEL OBJETO MASCOTA
 
+/// INICIO DE LOS EVENT-LISTENER
 buttonGuardar.addEventListener('click', ()=>{
     axios.post('', {
         vida: mascota.vida,
@@ -28,7 +32,9 @@ buttonGuardar.addEventListener('click', ()=>{
         console.log(respuesta);
     })
 });
-
+iniciar.addEventListener('click', ()=>{
+    heroDialog.style.display = 'flex';
+});
 iniciarButton.addEventListener('click', ()=>{
     let user = document.getElementById('user').value;
     let contra = document.getElementById('contra').value;
@@ -43,26 +49,21 @@ iniciarButton.addEventListener('click', ()=>{
             contrasena: contra,
             usuario: user
         }).then((respuesta)=>{
-            console.log(respuesta);
+            obtenerDatos(respuesta);
+            timer();
+            iniciar.style.visibility = 'hidden';
             heroDialog.style.display = 'none';
         }).catch((respuesta)=>{
             console.log(respuesta);
         })
     }
 });
-iniciar.addEventListener('click', ()=>{
-    heroDialog.style.display = 'flex';
-});
-// Inicio del timer
-const timer = function(){
-    // Asignar los valores al html
-    document.getElementById('vidaPorcentaje').innerHTML = mascota.vida + '%';
-    document.getElementById('energiaPorcentaje').innerHTML = mascota.energia + '%';
-    document.getElementById('suciedadPorcentaje').innerHTML = mascota.suciedad + '%';
-    document.getElementById('hambrePorcentaje').innerHTML = mascota.hambre + '%';
-    document.getElementById('mascota').innerHTML = mascota.nombre;
-    document.getElementById('owner').innerHTML = mascota.dueno;
+/// FIN DE LOS EVENT-LISTENER
 
+/// ### INICIO DE LA TODA LA FUNCIONALIDAD ###
+// INICIO DEL TIMER
+const timer = function(){
+    asignarValores();
     setInterval(()=>{
         // Se compara para que no pase de 100 y 0.
         if((mascota.vida = mascota.vida - 5) >= 0){
@@ -122,12 +123,9 @@ const timer = function(){
             document.getElementById('hambrePorcentaje').innerHTML = mascota.hambre + '%';
         }
     }, 10000);
-
-    document.removeEventListener('click', timer);
 }
-document.addEventListener('click', timer);
 
-// Mostrar el toast correcto
+// MOSTRAR EL TOAST-ALERTA CORRESPONDIENTE
 button.forEach(element =>{
     if(element.id === 'sucio'){
         element.addEventListener('click', ()=>{
@@ -149,7 +147,7 @@ button.forEach(element =>{
         });
     }
 });
-
+/// FIN DEL TIMER
 const cambiarImagen = (key) => {
     if(key.id === 'barVida'){
         if(mascota.vida >= 0 && mascota.vida <= 25){
@@ -232,4 +230,30 @@ const restarPorcentajes = (key) => {
     document.getElementById('hambrePorcentaje').innerHTML = mascota.hambre + '%';
     document.getElementById('vidaPorcentaje').innerHTML = mascota.vida + '%';
     document.getElementById('energiaPorcentaje').innerHTML = mascota.energia + '%';
+};
+/// ### FIN DE LA TODA LA FUNCIONALIDAD ###
+
+/// OBTENER DATOS DE LA RESPUESTA DE JAVA-MAVEN
+const obtenerDatos = (response)=>{
+    mascota.dueno = response.data.sueno;
+    mascota.energia = response.data.energia;
+    mascota.hambre = response.data.hambre;
+    mascota.nombre = response.data.nombre;
+    mascota.pokemon = response.data.pokemon;
+    mascota.suciedad = resonse.data.suciedad;
+    mascota.vida = response.data.vida;
+};
+/// ASIGNAR VALORES A LOS CAMPOS RESPECTIVOS
+const asignarValores = ()=>{
+    document.getElementById('vidaPorcentaje').innerHTML = mascota.vida + '%';
+    document.getElementById('energiaPorcentaje').innerHTML = mascota.energia + '%';
+    document.getElementById('suciedadPorcentaje').innerHTML = mascota.suciedad + '%';
+    document.getElementById('hambrePorcentaje').innerHTML = mascota.hambre + '%';
+    document.getElementById('mascota').innerHTML = mascota.nombre;
+    document.getElementById('owner').innerHTML = mascota.dueno;
+    if(mascota.pokemon == 'Pikachu'){
+        petMypet.src = '../assets/pikachuLogo.gif';
+    }else if(mascota.pokemon == 'Charmander'){
+        petMypet.src = '../assets/charmander.gif';
+    }
 };
