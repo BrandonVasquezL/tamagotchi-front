@@ -1,6 +1,7 @@
 const toast = document.querySelectorAll('.toast');
 const button = document.querySelectorAll('.data-button');
-const buttonIniciar = document.getElementById('buttonIniciar');
+const iniciar = document.getElementById('iniciar');
+const buttonGuardar = document.getElementById('buttonGuardar');
 const iniciarButton = document.getElementById('iniciarButton');
 const heroDialog = document.querySelector('.hero-dialog');
 
@@ -11,12 +12,45 @@ let mascota = {
     hambre: 25,
     nombre: 'chanchito feliz',
     dueno: 'brandon',
-    pokemon: ''
+    pokemon: 'pikachu'
 };
-iniciarButton.addEventListener('click', ()=>{
-    heroDialog.style.display = 'none';
+
+buttonGuardar.addEventListener('click', ()=>{
+    axios.post('', {
+        vida: mascota.vida,
+        energia: mascota.energia,
+        suciedad: mascota.suciedad,
+        hambre: mascota.hambre
+    }).then((respuesta)=>{
+        console.log(respuesta);
+        location.assign("../html/login.html");
+    }).catch((respuesta)=>{
+        console.log(respuesta);
+    })
 });
-buttonIniciar.addEventListener('click', ()=>{
+
+iniciarButton.addEventListener('click', ()=>{
+    let user = document.getElementById('user').value;
+    let contra = document.getElementById('contra').value;
+
+    if(user === '' || contra === ''){
+        document.getElementById('dialog-error').style.display = 'inline-block';
+        setTimeout(function(){
+            document.getElementById('dialog-error').style.display = 'none';
+        }, 3000);
+    }else{
+        axios.post('', {
+            contrasena: contra,
+            usuario: user
+        }).then((respuesta)=>{
+            console.log(respuesta);
+            heroDialog.style.display = 'none';
+        }).catch((respuesta)=>{
+            console.log(respuesta);
+        })
+    }
+});
+iniciar.addEventListener('click', ()=>{
     heroDialog.style.display = 'flex';
 });
 // Inicio del timer

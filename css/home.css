@@ -259,14 +259,12 @@ img{
 }
 .dialog div{
     width: 100%;
+    margin: 2rem 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2rem;
-}
-.hero-dialog [type="text"]{
-    margin-top: 2rem;
 }
 .hero-dialog [type="button"]{
     border: none;
@@ -276,7 +274,6 @@ img{
     font-size: 1rem;
     background-color: #000;
     color: #fff;
-    margin-bottom: 2rem;
     cursor: pointer;
     transition: background-color .3s, color .3s;
     border: 1px solid #000;
@@ -294,7 +291,10 @@ img{
     border-bottom: 2px solid #000;
     font-size: 1rem;
 }
-
+#dialog-error{
+    display: none;
+    text-align: center;
+}
 @media screen and (max-width: 700px) {
     .hero{
         flex-direction: column;

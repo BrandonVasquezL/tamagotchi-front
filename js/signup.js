@@ -1,4 +1,3 @@
-// ### GET NODES
 const nextButton = document.querySelector('.btn-next');
 const prevButton = document.querySelector('.btn-prev');
 const submitButton = document.querySelector('.btn-submit');
@@ -8,8 +7,6 @@ const selectedPoke = document.getElementById('country');
 const confirmCheckBox = document.getElementById('confirm');
 const toast = document.querySelector('.toast');
 const closeIcon = document.querySelector('.close-icon');
-const toastTwo = document.querySelector('.toastTwo');
-const closeIconTwo = document.querySelector('.close-iconTwo');
 const visionButton = document.querySelector('.visionButton');
 
 // ### VARIABLE DECLARATION 
@@ -29,9 +26,6 @@ let pokemonSelected = '';
 */
 closeIcon.addEventListener('click', ()=>{
     toast.classList.toggle('showing');
-});
-closeIconTwo.addEventListener('click', ()=>{
-    toastTwo.classList.toggle('showing');
 });
 
 visionButton.addEventListener('click',()=>{
@@ -80,12 +74,17 @@ submitButton.addEventListener('click', ()=>{
             }
         }, 5000);
     }else{
-        toastTwo.classList.toggle('showing');
-        setTimeout(function(){
-            if(toastTwo.classList.toggle('showing')){
-                toastTwo.classList.toggle('showing');
-            }
-        }, 5000);
+        axios.post('', {
+            usuario: nameUser,
+            pokemon: pokemonSelected,
+            contrasena: password,
+            mascota: namePet
+        }).then((respuesta)=>{
+            console.log(respuesta);
+            location.assign("../html/home.html");
+        }).catch((respuesta)=>{
+            console.log(respuesta);
+        })
     }
 });
 

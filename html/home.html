@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/home.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="shortcut icon" href="../assets/icon.ico" type="image/x-icon">
     <title>Tamagotchi</title>
 </head>
@@ -109,8 +110,8 @@
                     </div>
                 </div>
                 <div class="information-buttons">
-                    <button type="button" class="submit-button" id="buttonIniciar">iniciar</button>
-                    <button type="submit" class="submit-button" id="buttonGuardar">guardar</button>
+                    <button type="button" class="submit-button" id="iniciar">iniciar</button>
+                    <button type="button" class="submit-button" id="buttonGuardar">guardar</button>
                 </div>
             </form>
         </div>
@@ -122,7 +123,8 @@
                 <div>
                     <input type="text" id="user" placeholder="usuario">
                     <input type="password" id="contra" placeholder="Constraseña">
-                    <input type="button" value="Iniciar" id="iniciarButton">
+                    <input type="button" value="Comenzar" id="iniciarButton">
+                    <span id="dialog-error">Campos vacios</span>
                 </div>
             </div>
         </div>

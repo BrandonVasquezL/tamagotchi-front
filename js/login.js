@@ -18,8 +18,8 @@ formButton.addEventListener('click', ()=>{
         toastShow();
     }else{
         axios.post('', {
-            password: password,
-            nameuser: nameUser
+            contrasena: password,
+            usuario: nameUser
         }).then((respuesta)=>{
             console.log(respuesta);
             location.assign("../html/home.html");
