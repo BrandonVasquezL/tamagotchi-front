@@ -74,7 +74,7 @@ submitButton.addEventListener('click', ()=>{
             }
         }, 5000);
     }else{
-        axios.post('', {
+        axios.post('http://localhost:4567/crear', {
             usuario: nameUser,
             pokemon: pokemonSelected,
             contrasena: password,

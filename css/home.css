@@ -239,21 +239,27 @@ img{
     display: none;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(10px);
     transition: display .3s;
+
 }
 .dialog{
     width: 300px;
-    background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+    background-color: #fff;
 }
 .dialog h3{
-    background-color: #000;
-    color: #fff;
-    padding: 1.3rem 1rem;
-    font-size: 1.3rem;
-    letter-spacing: 2px;
+    color: #000;
+    margin-top: 1.3rem;
+    padding: 1rem 1rem;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
     text-align: center;
     border-radius: 5px 5px 0 0;
 }
@@ -290,6 +296,7 @@ img{
     padding: .3rem;
     border-bottom: 2px solid #000;
     font-size: 1rem;
+    background: none;
 }
 #dialog-error{
     display: none;

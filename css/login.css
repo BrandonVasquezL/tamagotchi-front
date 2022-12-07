@@ -93,67 +93,23 @@ body{
     animation: pokemonRunning ease-in 5s infinite normal;
 }
 .form__title{
-    margin-top: 2.3rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
     width: 270px;
     object-fit: cover;
     animation: title ease-in 3s infinite alternate;
-}
-.form__container{
-    position: relative;
-    margin-top: 1.2rem;
-}
-.form__container--active{
-    margin-top: 3rem;
-}
-.container__input{
-    width: 100%;
-    padding: 0 5px;
-    height: 40px;
-    font-size: 1.1rem;
-    border: none;
-    outline: none;
-    background: none;
-    font-family: inherit;
-    border-bottom: 1px solid #e6e3e3;
-}
-.container__label{
-    position: absolute;
-    top: 50%;
-    left: 5px;
-    color: #e6e3e3;
-    transform: translateY(-50%);
-    font-size: 1.1rem;
-    pointer-events: none;
-    transition: top .5s;
-}
-.container__span::before{
-    content: '';
-    position: absolute;
-    top: 39px;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background-color: #000;
-    transition: width .5s;
-}
-.container__input:focus ~ .container__label,
-.container__input:valid ~ .container__label{
-    top: -5px;
-    color: #000;
-}
-.container__input:focus ~ .container__span::before,
-.container__input:valid ~ .container__span::before{
-    width: 100%;
 }
 .form__button{
     margin-top: 2rem;
     padding: .7rem 2.6rem;
     font-family: inherit;
     border: none;
+    text-decoration: none;
+    color: #000;
+    background-color: #e6e3e3;
     font-size: 1.1rem;
     border-radius: 3px;
-    transition-property: background-color;
-    transition-duration: .5s;
+    transition: background-color .5s, color .5s;
     z-index: 100;
     cursor: pointer;
 }
@@ -164,14 +120,14 @@ body{
 .form__signUp{
     z-index: 100;
     margin-top: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     text-decoration: none;
     color: #000;
     font-size: 1.1rem;
     padding: .5rem 1.6rem;
     border-radius: 3px;
     border: 1px solid #000;
-    transition: border .3s;
+    transition: border .3s, color .3s;
     cursor: pointer;
 }
 .form__signUp:hover{
