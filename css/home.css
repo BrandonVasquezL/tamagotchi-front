@@ -121,6 +121,7 @@ img{
 /* --- DATA PET --- */
 .hero__information{
     width: 400px;
+    height: 80%;
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
@@ -138,7 +139,7 @@ img{
 .information-title{
     font-size: 1rem;
     text-align: center;
-    margin: 2rem 0 0;
+    margin: 3rem 0;
     transition: transform .5s;
     cursor: pointer;
     letter-spacing: 4px;
@@ -186,15 +187,8 @@ img{
 .data-bar:hover{
     transform: scale(1.1);
 }
-.information-buttons{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-}
 .submit-button{
-    margin: 0 0 2rem;
+    position: fixed;
     border: none;
     background-color: #000;
     color: #fff;
@@ -204,12 +198,38 @@ img{
     letter-spacing: 2px;
     cursor: pointer;
     border-radius: 3px;
-    border: 1px solid #000;
     transition: background-color .5s, color .5s;
 }
 .submit-button:hover{
     background-color: #fff;
     color: #000;
+}
+.submit-button-active{
+    padding: .9rem 1.5rem;
+    background-color: #D8000C;
+    border: #D8000C;
+    bottom: 10px;
+    left: 90px;
+}
+.submit-button-active:hover{
+    color: #D8000C;
+}
+#buttonGuardar{
+    bottom: 10px;
+    left: 380px;
+}
+#iniciar{
+    bottom: 10px;
+    left: 640px;
+}
+#usuarioNoExiste{
+    display: none;
+}
+#campo-vacio{
+    display: none;
+}
+#campo-error{
+    display: none;
 }
 .data-button{
     position: absolute;
@@ -302,7 +322,14 @@ img{
     display: none;
     text-align: center;
 }
-
+#eliminarButton{
+    background-color: #D8000C;
+    border: 1px solid #D8000C;
+}
+#eliminarButton:hover{
+    background-color: #fff;
+    color: #D8000C;
+}
 @media screen and (max-width: 700px) {
     .hero{
         flex-direction: column;

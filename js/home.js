@@ -3,8 +3,11 @@ const button = document.querySelectorAll('.data-button');
 const iniciar = document.getElementById('iniciar');
 const buttonGuardar = document.getElementById('buttonGuardar');
 const iniciarButton = document.getElementById('iniciarButton');
+const eliminarButton = document.getElementById('eliminarButton');
 const heroDialog = document.querySelector('.hero-dialog');
+const heroDialogTwo = document.querySelector('.hero-dialogTwo');
 const petMypet = document.querySelector('.pet-mypet');
+const eliminar = document.getElementById('eliminar');
 
 /// OBJETO DE LA MASCOTA CON SUS ATRIBUTOS
 let mascota = {
@@ -24,16 +27,48 @@ buttonGuardar.addEventListener('click', ()=>{
         vida: mascota.vida,
         energia: mascota.energia,
         suciedad: mascota.suciedad,
-        hambre: mascota.hambre
+        hambre: mascota.hambre,
+        dueno: mascota.dueno
     }).then((respuesta)=>{
-        console.log(respuesta);
-        location.assign("../html/login.html");
+        if(respuesta == true){
+            console.log(respuesta);
+            location.assign("../html/login.html");
+        }
     }).catch((respuesta)=>{
         console.log(respuesta);
     })
 });
 iniciar.addEventListener('click', ()=>{
     heroDialog.style.display = 'flex';
+});
+eliminar.addEventListener('click', ()=>{
+    heroDialogTwo.style.display = 'flex';
+});
+eliminarButton.addEventListener('click', ()=>{
+    let userEliminar = document.getElementById('userEliminar').value;
+    let contraEliminar = document.getElementById('contraEliminar').value;
+    if(userEliminar === '' || contraEliminar === ''){
+        document.getElementById('campo-vacio').style.display = 'inline-block';
+        setTimeout(function(){
+            document.getElementById('campo-vacio').style.display = 'none';
+        }, 3000);
+    }else{
+        axios.post('', {
+            contrasena: contraEliminar,
+            usuario: userEliminar
+        }).then((respuesta)=>{
+            if(respuesta == true){
+                location.assign("../html/login.html");
+            }else if(respuesta == false){
+                document.getElementById('campo-error').style.display = 'inline-block';
+                setTimeout(function(){
+                    document.getElementById('campo-error').style.display = 'none';
+                }, 3000);
+            }
+        }).catch((respuesta)=>{
+            console.log(respuesta);
+        })
+    }
 });
 iniciarButton.addEventListener('click', ()=>{
     let user = document.getElementById('user').value;
@@ -49,15 +84,23 @@ iniciarButton.addEventListener('click', ()=>{
             contrasena: contra,
             usuario: user
         }).then((respuesta)=>{
-            obtenerDatos(respuesta);
-            timer();
-            iniciar.style.visibility = 'hidden';
-            heroDialog.style.display = 'none';
+            if(respuesta == false){
+                document.getElementById('usuarioNoExiste').style.display = 'inline-block';
+                setTimeout(function(){
+                    document.getElementById('usuarioNoExiste').style.display = 'none';
+                }, 3000);
+            }else{
+                obtenerDatos(respuesta);
+                timer();
+                iniciar.style.visibility = 'hidden';
+                heroDialog.style.display = 'none';
+            }
         }).catch((respuesta)=>{
             console.log(respuesta);
         })
     }
 });
+
 /// FIN DE LOS EVENT-LISTENER
 
 /// ### INICIO DE LA TODA LA FUNCIONALIDAD ###
@@ -122,7 +165,7 @@ const timer = function(){
             mascota.hambre = 0;
             document.getElementById('hambrePorcentaje').innerHTML = mascota.hambre + '%';
         }
-    }, 10000);
+    }, 20000);
 }
 
 // MOSTRAR EL TOAST-ALERTA CORRESPONDIENTE
@@ -231,7 +274,7 @@ const restarPorcentajes = (key) => {
     document.getElementById('vidaPorcentaje').innerHTML = mascota.vida + '%';
     document.getElementById('energiaPorcentaje').innerHTML = mascota.energia + '%';
 };
-/// ### FIN DE LA TODA LA FUNCIONALIDAD ###
+/// ### FIN DE TODA LA FUNCIONALIDAD ###
 
 /// OBTENER DATOS DE LA RESPUESTA DE JAVA-MAVEN
 const obtenerDatos = (response)=>{

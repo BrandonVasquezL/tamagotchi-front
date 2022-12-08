@@ -112,6 +112,8 @@
                 <div class="information-buttons">
                     <button type="button" class="submit-button" id="iniciar">iniciar</button>
                     <button type="button" class="submit-button" id="buttonGuardar">guardar</button>
+                    <button type="button" class="submit-button submit-button-active" id="eliminar">Eliminar cuenta</button>
+
                 </div>
             </form>
         </div>
@@ -125,11 +127,30 @@
                     <input type="password" id="contra" placeholder="Constraseña">
                     <input type="button" value="Comenzar" id="iniciarButton">
                     <span id="dialog-error">Campos vacios</span>
+                    <span id="usuarioNoExiste">No existe el usuario</span>
                 </div>
             </div>
         </div>
+        <div class="hero-dialog hero-dialogTwo">
+            <div class="dialog" id="">
+                <h3>
+                    Eliminar cuenta
+                </h3>
+                <div>
+                    <input type="text" id="userEliminar" placeholder="usuario">
+                    <input type="password" id="contraEliminar" placeholder="Constraseña">
+                    <input type="button" value="Eliminar" id="eliminarButton">
+                    <span id="campo-vacio">Campos vacios</span>
+                    <span id="campo-error">hubo un error</span>
+                </div>
+            </div>
+        </div>
+        <!-- ELIMINAR CUENTA -->
+        <audio loop id="hero__music">
+            <source src="../assets/backgroundSound.mp3" type="audio/mpeg">
+        </audio>
     </div>
     <script src="../js/home.js"></script>
-    <script src="../js/backgroundSound.js"></script>
+    <!-- <script src="../js/backgroundSound.js"></script> -->
 </body>
 </html>
