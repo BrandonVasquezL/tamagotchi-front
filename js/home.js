@@ -8,6 +8,7 @@ const heroDialog = document.querySelector('.hero-dialog');
 const heroDialogTwo = document.querySelector('.hero-dialogTwo');
 const petMypet = document.querySelector('.pet-mypet');
 const eliminar = document.getElementById('eliminar');
+const salir = document.getElementById('salir');
 
 /// OBJETO DE LA MASCOTA CON SUS ATRIBUTOS
 let mascota = {
@@ -108,7 +109,9 @@ iniciarButton.addEventListener('click', ()=>{
         })
     }
 });
-
+salir.addEventListener('click', ()=>{
+    heroDialogTwo.style.display = 'none';
+});
 /// FIN DE LOS EVENT-LISTENER
 
 /// ### INICIO DE LA TODA LA FUNCIONALIDAD ###

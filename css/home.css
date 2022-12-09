@@ -231,6 +231,13 @@ img{
 #campo-error{
     display: none;
 }
+#salir{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 30px;
+    object-fit: cover;
+}
 .data-button{
     position: absolute;
     right: 15px;
