@@ -23,20 +23,28 @@ let mascota = {
 
 /// INICIO DE LOS EVENT-LISTENER
 buttonGuardar.addEventListener('click', ()=>{
-    axios.post('', {
-        vida: mascota.vida,
-        energia: mascota.energia,
-        suciedad: mascota.suciedad,
-        hambre: mascota.hambre,
-        dueno: mascota.dueno
-    }).then((respuesta)=>{
-        if(respuesta == true){
+    if(mascota.dueno != ''){
+        axios.post('http://localhost:4567/actualizar', {
+            vida: mascota.vida,
+            energia: mascota.energia,
+            suciedad: mascota.suciedad,
+            hambre: mascota.hambre,
+            usuario: mascota.dueno
+        }).then((respuesta)=>{
+            if(respuesta.data.mensaje == true){
+                location.assign("../html/login.html");
+            }
+        }).catch((respuesta)=>{
             console.log(respuesta);
-            location.assign("../html/login.html");
-        }
-    }).catch((respuesta)=>{
-        console.log(respuesta);
-    })
+        })
+    }else{
+        buttonGuardar.innerHTML = 'ERROR';
+        buttonGuardar.style.backgroundColor = '#D8000C';
+        setTimeout(function(){
+            buttonGuardar.innerHTML = 'guardar';
+            buttonGuardar.style.backgroundColor = '#000';
+        }, 2000);
+    }
 });
 iniciar.addEventListener('click', ()=>{
     heroDialog.style.display = 'flex';
@@ -53,13 +61,13 @@ eliminarButton.addEventListener('click', ()=>{
             document.getElementById('campo-vacio').style.display = 'none';
         }, 3000);
     }else{
-        axios.post('', {
+        axios.post('http://localhost:4567/eliminar', {
             contrasena: contraEliminar,
             usuario: userEliminar
         }).then((respuesta)=>{
-            if(respuesta == true){
+            if(respuesta.data.mensaje == true){
                 location.assign("../html/login.html");
-            }else if(respuesta == false){
+            }else if(respuesta.data.mensaje == false){
                 document.getElementById('campo-error').style.display = 'inline-block';
                 setTimeout(function(){
                     document.getElementById('campo-error').style.display = 'none';
@@ -80,11 +88,11 @@ iniciarButton.addEventListener('click', ()=>{
             document.getElementById('dialog-error').style.display = 'none';
         }, 3000);
     }else{
-        axios.post('', {
+        axios.post('http://localhost:4567/iniciarSesion', {
             contrasena: contra,
             usuario: user
         }).then((respuesta)=>{
-            if(respuesta == false){
+            if(respuesta.data.mensaje == false){
                 document.getElementById('usuarioNoExiste').style.display = 'inline-block';
                 setTimeout(function(){
                     document.getElementById('usuarioNoExiste').style.display = 'none';
@@ -278,7 +286,7 @@ const restarPorcentajes = (key) => {
 
 /// OBTENER DATOS DE LA RESPUESTA DE JAVA-MAVEN
 const obtenerDatos = (response)=>{
-    mascota.dueno = response.data.sueno;
+    mascota.dueno = response.data.dueno;
     mascota.energia = response.data.energia;
     mascota.hambre = response.data.hambre;
     mascota.nombre = response.data.nombre;

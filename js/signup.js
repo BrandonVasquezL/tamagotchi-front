@@ -80,8 +80,7 @@ submitButton.addEventListener('click', ()=>{
             contrasena: password,
             mascota: namePet
         }).then((respuesta)=>{
-            console.log(respuesta);
-            location.assign("../html/home.html");
+            respuesta.data.mensaje == false ? console.log('error') : location.assign("../html/home.html");
         }).catch((respuesta)=>{
             console.log(respuesta);
         })
