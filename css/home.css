@@ -231,7 +231,7 @@ img{
 #campo-error{
     display: none;
 }
-#salir{
+.salir{
     position: absolute;
     top: 5px;
     right: 5px;
