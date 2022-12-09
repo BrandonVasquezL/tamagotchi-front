@@ -145,7 +145,7 @@ const timer = function(){
             if(mascota.energia < 10){
                 toastEnergia.classList.toggle('showing');
                 setTimeout(function(){
-                    toastEnergia.classList.toggle('showing');    
+                    toastEnergia.classList.toggle('showing');
                 }, 3000);
             }
         }else{
