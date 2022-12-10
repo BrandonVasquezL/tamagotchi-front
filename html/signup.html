@@ -14,22 +14,22 @@
         <div class="container">
             <div class="form-box">
                 <div class="progress">
-                    <div class="logo">
+                    <div class="logo"> 
                         <a href="/">
                             <span>Tama</span>gotchi
                         </a>
                     </div>
-                    <ul class="progress-steps">
-                        <li class="step active">
-                            <span>1</span>
+                    <ul class="progress-steps"> 
+                        <li class="step active"> 
+                            <span aria-label="datos de la cuenta">1</span> 
                             <p>datos de cuenta<br><span>10 secs para completar</span></p>
                         </li>
                         <li class="step">
-                            <span>2</span>
+                            <span aria-label="asigna tu mascota">2</span>
                             <p>escojer mascota<br><span>60 secs para completar</span></p>
                         </li>
                         <li class="step">
-                            <span>3</span>
+                            <span aria-label="verifica tus datos">3</span>
                             <p>Confirmar<br><span>10 secs para completar</span></p>
                         </li>
                     </ul>
@@ -40,40 +40,40 @@
                         <p>Ingresa tu información personal correctamente</p>
                         <div>
                             <label>nombre de usuario</label>
-                            <input type="text" id="nameUser" required>
+                            <input type="text" id="nameUser" required aria-label="ingresa tu nombre">
                         </div>
                         <div>
                             <label>contraseña</label>
-                            <input type="password" id="password" required>
+                            <input type="password" id="password" required aria-label="ingresa tu contraseña">
                         </div>
                     </div>
                     <div class="form-two form-step">
-                        <h2>escojer mascota</h2>
+                        <h2 aria-label="elige tu mascota">escojer mascota</h2>
                         <div id="view__pokemon">
                             <div class="pokemon-container">
-                                <img src="../assets/pikachuLogo.gif" alt="Pokemon Pikachu" class="pokemon-img">
+                                <img src="../assets/pikachuLogo.gif" alt="Pokemon Pikachu" class="pokemon-img" aria-label="imagen pikachu">
                                 <span>Pikachu</span>
                             </div>
                             <div class="pokemon-container">
-                                <img src="../assets/charmander.gif" alt="Pokemon Charmander" class="pokemon-img">
+                                <img src="../assets/charmander.gif" alt="Pokemon Charmander" class="pokemon-img" aria-label="imagen charmander">
                                 <span>Charmander</span>
                             </div>
                         </div>
                         <div>
                             <label>nombre de la mascota</label>
-                            <input type="text" id="namePet" required>
+                            <input type="text" id="namePet" required aria-label="ingresa el nombre de la mascota">
                         </div>
                         <div>
                             <label>Pokemon</label>
                             <select name="country" id="country">
-                                <option value="Pikachu">Por favor selecciona</option>
-                                <option value="Pikachu">Pikachu</option>
-                                <option value="Charmander">Charmander</option>
+                                <option value="Pikachu" aria-label="elige tu mascota">Por favor selecciona</option>
+                                <option value="Pikachu" aria-label="Aqui esta pikachu" >Pikachu</option>
+                                <option value="Charmander" aria-label="Aqui esta charmander">Charmander</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-three form-step">
-                        <h2>Confirmar</h2>
+                        <h2 aria-label="confirma tus datos">Confirmar</h2>
                         <div>
                             <label>Nombre de usuario</label>
                             <input type="text" disabled id="confirmNameUser">
@@ -92,14 +92,14 @@
                             <input type="text" disabled id="confirmSelectedPet">
                         </div>
                         <div class="checkbox">
-                            <input type="checkbox" id="confirm">
+                            <input type="checkbox" id="confirm" aria-label="boton de informacion correcta">
                             <label>Mi información es correcta</label>
                         </div>
                     </div>
                     <div class="btn-group">
-                        <button type="button" class="btn-prev" disabled>regresar</button>
-                        <button type="button" class="btn-next">siguiente</button>
-                        <button type="button" class="btn-submit">registrar</button>
+                        <button type="button" class="btn-prev" disabled aria-label="boton regresar">regresar</button>
+                        <button type="button" class="btn-next" aria-label="boton siguiente">siguiente</button>
+                        <button type="button" class="btn-submit" aria-label="boton registrar">registrar</button>
                     </div>
                 </form>
             </div>
@@ -113,7 +113,7 @@
             <div class="squad">
                 <img src="../assets/error.svg" class="squad-error">
             </div>
-            <span>campos vacios</span>
+            <span aria-label="campos vacios">campos vacios</span>
             <div class="closed">
                 <img src="../assets/closed.svg" class="close-icon">
             </div>
