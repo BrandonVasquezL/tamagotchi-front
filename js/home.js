@@ -26,7 +26,7 @@ let mascota = {
 /// INICIO DE LOS EVENT-LISTENER
 buttonGuardar.addEventListener('click', ()=>{
     if(mascota.dueno != ''){
-        axios.post('http://localhost:4567/actualizar', {
+        axios.post('https://tamagotchi-back-production-6be1.up.railway.app/actualizar', {
             vida: mascota.vida,
             energia: mascota.energia,
             suciedad: mascota.suciedad,
@@ -63,7 +63,7 @@ eliminarButton.addEventListener('click', ()=>{
             document.getElementById('campo-vacio').style.display = 'none';
         }, 3000);
     }else{
-        axios.post('http://localhost:4567/eliminar', {
+        axios.post('https://tamagotchi-back-production-6be1.up.railway.app/eliminar', {
             contrasena: contraEliminar,
             usuario: userEliminar
         }).then((respuesta)=>{
@@ -90,7 +90,7 @@ iniciarButton.addEventListener('click', ()=>{
             document.getElementById('dialog-error').style.display = 'none';
         }, 3000);
     }else{
-        axios.post('http://localhost:4567/iniciarSesion', {
+        axios.post('https://tamagotchi-back-production-6be1.up.railway.app/iniciarSesion', {
             contrasena: contra,
             usuario: user
         }).then((respuesta)=>{

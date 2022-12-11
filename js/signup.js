@@ -74,7 +74,7 @@ submitButton.addEventListener('click', ()=>{
             }
         }, 5000);
     }else{
-        axios.post('http://localhost:4567/crear', {
+        axios.post('https://tamagotchi-back-production-6be1.up.railway.app/crear', {
             usuario: nameUser,
             pokemon: pokemonSelected,
             contrasena: password,
