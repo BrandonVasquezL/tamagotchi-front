@@ -251,16 +251,20 @@ const cambiarImagen = (key) => {
     }
     if(key.id === 'barHambre'){
         if(mascota.hambre >= 0 && mascota.hambre <= 25){
-            key.src = '../assets/100.png';
+            // key.src = '../assets/100.png';
+            key.src = '../assets/25.png';
         }
         if(mascota.hambre >= 30 && mascota.hambre <= 50){
-            key.src = '../assets/75.png';
+            key.src = '../assets/50.png';
+            // key.src = '../assets/75.png';
         }
         if(mascota.hambre >= 55 && mascota.hambre <= 75){
-            key.src = '../assets/50.png';
+            // key.src = '../assets/50.png';
+            key.src = '../assets/75.png';
         }
         if(mascota.hambre >= 80 && mascota.hambre <= 100){
-            key.src = '../assets/25.png';
+            // key.src = '../assets/25.png';
+            key.src = '../assets/100.png';
         }
     }
 };
