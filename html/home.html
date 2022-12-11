@@ -12,9 +12,9 @@
 <body>
     <div class="hero">
         <img src="../assets/tamagotchi.png" alt="Logo tamagotchi" class="hero__logo">
-        <img src="../assets/pokemonthree.gif" alt="pokemon pikachu" class="hero__icon">
+        <img src="../assets/pokemonthree.gif" alt="pokemon pikachu" class="hero__icon" aria-label="gif pikachu">
         <div class="hero__pet">
-            <img src="../assets/charmander.gif" alt="pokemon charmander" class="pet-mypet">
+            <img src="../assets/charmander.gif" alt="pokemon charmander" class="pet-mypet" aria-label="gif charmander">
             <!-- ### AQUÍ VAN LAS ALERTAS DE HAMBRE, SUEÑO, ETC. ### -->
             <div class="toast toastVida">
                 <div class="upside">
@@ -74,7 +74,7 @@
                         </span>
                         <img src="../assets/energy.png" alt="energia" class="data-icon">
                         <img src="../assets/100.png" alt="Barra de energia" class="data-bar data-bar-active" id="barEnergia">
-                        <button type="button" class="data-button" id="dormir">
+                        <button type="button" class="data-button" id="dormir" aria-label="boton dormir">
                             dormir
                         </button>
                     </div>
@@ -89,7 +89,7 @@
                         </span>
                         <img src="../assets/suciedad.svg" alt="Suciedad" class="data-icon">
                         <img src="../assets/100.png" alt="Barra de suciedad" class="data-bar" id="barSuciedad">
-                        <button type="button" class="data-button" id="sucio">
+                        <button type="button" class="data-button" id="sucio" aria-label="boton bañar">
                             bañar
                         </button>
                     </div>
@@ -104,15 +104,15 @@
                         </span>
                         <img src="../assets/carne.png" alt="imagen de hambre" class="data-icon data-icon-active">
                         <img src="../assets/100.png" alt="Barra de hambre" class="data-bar" id="barHambre">
-                        <button type="button" class="data-button" id="comer">
+                        <button type="button" class="data-button" id="comer" aria-label="boton comer">
                             comer
                         </button>
                     </div>
                 </div>
                 <div class="information-buttons">
-                    <button type="button" class="submit-button" id="iniciar">iniciar</button>
-                    <button type="button" class="submit-button" id="buttonGuardar">guardar</button>
-                    <button type="button" class="submit-button submit-button-active" id="eliminar">Eliminar cuenta</button>
+                    <button type="button" class="submit-button" id="iniciar" aria-label="boton iniciar">iniciar</button>
+                    <button type="button" class="submit-button" id="buttonGuardar" aria-label="boton guardar">guardar</button>
+                    <button type="button" class="submit-button submit-button-active" id="eliminar" aria-label="boton eliminar">Eliminar cuenta</button>
 
                 </div>
             </form>
@@ -123,12 +123,12 @@
                     Iniciar juego
                 </h3>
                 <div>
-                    <input type="text" id="user" placeholder="usuario">
-                    <input type="password" id="contra" placeholder="Constraseña">
-                    <input type="button" value="Comenzar" id="iniciarButton">
+                    <input type="text" id="user" placeholder="usuario" aria-label="ingresa usuario">
+                    <input type="password" id="contra" placeholder="Constraseña" aria-label="ingresa Constraseña">
+                    <input type="button" value="Comenzar" id="iniciarButton" aria-label="boton iniciar">
                     <span id="dialog-error">Campos vacios</span>
                     <span id="usuarioNoExiste">No existe el usuario</span>
-                    <img src="../assets/salir.svg" alt=" imagen Salir" id="salirInicio" class="salir">
+                    <img src="../assets/salir.svg" alt=" imagen Salir" id="salirInicio" class="salir" aria-label="boton salir">
                 </div>
             </div>
         </div>
@@ -138,13 +138,13 @@
                     Eliminar cuenta
                 </h3>
                 <div>
-                    <input type="text" id="userEliminar" placeholder="usuario">
-                    <input type="password" id="contraEliminar" placeholder="Constraseña">
-                    <input type="button" value="Eliminar" id="eliminarButton">
+                    <input type="text" id="userEliminar" placeholder="usuario" aria-label="ingresa usuario">
+                    <input type="password" id="contraEliminar" placeholder="Constraseña" aria-label="ingresa Constraseña">
+                    <input type="button" value="Eliminar" id="eliminarButton" aria-label="boton eliminar">
                     <span id="campo-vacio">Campos vacios</span>
                     <span id="campo-error">hubo un error</span>
                 </div>
-                <img src="../assets/salir.svg" alt="imagen Salir" id="salir" class="salir">
+                <img src="../assets/salir.svg" alt="imagen Salir" id="salir" class="salir" aria-label="boton salir">
             </div>
         </div>
         <!-- ELIMINAR CUENTA -->
